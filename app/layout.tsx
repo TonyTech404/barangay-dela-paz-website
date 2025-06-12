@@ -5,6 +5,7 @@ import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scroll-to-top"
+import PWAInstallPrompt from "@/components/pwa-install-prompt"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -87,6 +88,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   category: "government",
+  manifest: "/manifest.json",
     generator: 'v0.dev'
 }
 
@@ -167,6 +169,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${openSans.variable} font-sans min-h-screen flex flex-col`}>
         <Header />
         <ScrollToTop />
+        <PWAInstallPrompt />
         <main className="flex-grow">{children}</main>
         <Footer />
       </body>

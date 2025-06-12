@@ -3,9 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -33,15 +35,23 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-[#333333] hover:text-[#0E58D8] font-medium transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const isActive = pathname === item.href
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`font-medium transition-colors relative ${
+                    isActive ? "text-[#0E58D8] font-semibold" : "text-[#333333] hover:text-[#0E58D8]"
+                  }`}
+                >
+                  {item.name}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#0E58D8] rounded-full"></span>
+                  )}
+                </Link>
+              )
+            })}
           </nav>
 
           {/* Mobile menu button */}
@@ -54,16 +64,23 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-[#C4C4C4]">
             <nav className="flex flex-col space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-[#333333] hover:text-[#0E58D8] font-medium py-2 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const isActive = pathname === item.href
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`font-medium py-2 transition-colors ${
+                      isActive
+                        ? "text-[#0E58D8] font-semibold bg-[#E8F0FE] px-3 rounded-md"
+                        : "text-[#333333] hover:text-[#0E58D8]"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              })}
             </nav>
           </div>
         )}

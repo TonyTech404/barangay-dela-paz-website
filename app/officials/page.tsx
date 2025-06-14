@@ -126,37 +126,37 @@ export default function OfficialsPage() {
               {
                 name: "Pedro Reyes",
                 position: "Kagawad - Peace and Order",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Pedro+Reyes",
               },
               {
                 name: "Elena Magtanggol",
                 position: "Kagawad - Health and Sanitation",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Elena+M",
               },
               {
                 name: "Roberto Manalastas",
                 position: "Kagawad - Infrastructure",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Roberto+M",
               },
               {
                 name: "Juana Bautista",
                 position: "Kagawad - Education",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Juana+B",
               },
               {
                 name: "Miguel Villanueva",
                 position: "Kagawad - Environment",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Miguel+V",
               },
               {
                 name: "Rosario Domingo",
                 position: "Kagawad - Senior Citizens",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Rosario+D",
               },
               {
                 name: "Antonio Pascual",
                 position: "Kagawad - Budget and Finance",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Antonio+P",
               },
             ].map((official, index) => (
               <article key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -186,7 +186,7 @@ export default function OfficialsPage() {
             <div className="w-full md:w-1/3 lg:w-1/4">
               <div className="relative h-80 w-full rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=300"
+                  src="/placeholder.svg?height=400&width=300&text=Maria+Santos"
                   alt="Maria Santos, SK Chairman of Barangay Dela Paz"
                   fill
                   className="object-cover"
@@ -229,37 +229,37 @@ export default function OfficialsPage() {
               {
                 name: "John Michael Cruz",
                 position: "SK Kagawad - Sports and Recreation",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=John+Cruz",
               },
               {
                 name: "Angela Marie Reyes",
                 position: "SK Kagawad - Education and Training",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Angela+R",
               },
               {
                 name: "Carlos Emmanuel Santos",
                 position: "SK Kagawad - Health and Environment",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Carlos+S",
               },
               {
                 name: "Patricia Joy Mendoza",
                 position: "SK Kagawad - Arts and Culture",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Patricia+M",
               },
               {
                 name: "Mark Anthony Garcia",
                 position: "SK Kagawad - Livelihood and Employment",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Mark+G",
               },
               {
                 name: "Sophia Mae Torres",
                 position: "SK Kagawad - Community Development",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Sophia+T",
               },
               {
                 name: "Joshua David Flores",
                 position: "SK Kagawad - Information and Communications",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Joshua+F",
               },
             ].map((official, index) => (
               <article key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -290,14 +290,18 @@ export default function OfficialsPage() {
               {
                 name: "Lourdes Aquino",
                 position: "Barangay Secretary",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Lourdes+A",
               },
               {
                 name: "Ricardo Torres",
                 position: "Barangay Treasurer",
-                image: "/placeholder.svg?height=300&width=300",
+                image: "/placeholder.svg?height=300&width=300&text=Ricardo+T",
               },
-              { name: "Maricel Gonzales", position: "Barangay Clerk", image: "/placeholder.svg?height=300&width=300" },
+              {
+                name: "Maricel Gonzales",
+                position: "Barangay Clerk",
+                image: "/placeholder.svg?height=300&width=300&text=Maricel+G",
+              },
             ].map((staff, index) => (
               <article
                 key={index}

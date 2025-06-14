@@ -174,17 +174,23 @@ export default function DiscoverCarousel() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Handle mounting to prevent hydration issues
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Auto-play functionality
   useEffect(() => {
-    if (!isAutoPlaying || selectedPlace) return
+    if (!isAutoPlaying || selectedPlace || !isMounted) return
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % places.length)
     }, 5000)
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, selectedPlace])
+  }, [isAutoPlaying, selectedPlace, isMounted])
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % places.length)
@@ -239,7 +245,7 @@ export default function DiscoverCarousel() {
 
   // Calculate the transform for the sliding effect
   const getTransform = () => {
-    if (typeof window === "undefined") return "translateX(0%)"
+    if (!isMounted) return "translateX(0%)" // Consistent default for server and initial client render
 
     const isMobile = window.innerWidth < 640
     const isTablet = window.innerWidth < 1024

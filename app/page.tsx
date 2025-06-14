@@ -209,21 +209,21 @@ export default function Home() {
                 date="June 15, 2023"
                 category="Health"
                 excerpt="Schedule for the upcoming COVID-19 vaccination drive at the barangay health center."
-                imageUrl="/placeholder.svg?height=200&width=300"
+                imageUrl="/placeholder.svg?height=200&width=300&text=Vaccination+Drive"
               />
               <NewsCard
                 title="Barangay Clean-up Drive"
                 date="June 10, 2023"
                 category="Environment"
                 excerpt="Join our community clean-up drive this weekend to help keep our streets clean."
-                imageUrl="/placeholder.svg?height=200&width=300"
+                imageUrl="/placeholder.svg?height=200&width=300&text=Community+Cleanup"
               />
               <NewsCard
                 title="Youth Leadership Program"
                 date="June 5, 2023"
                 category="Youth"
                 excerpt="New leadership program for youth aged 15-24. Registration now open."
-                imageUrl="/placeholder.svg?height=200&width=300"
+                imageUrl="/placeholder.svg?height=200&width=300&text=Youth+Leadership"
               />
             </div>
           </div>

@@ -17,7 +17,12 @@ export default function NewsPage() {
           {/* Featured News */}
           <div className="mb-12">
             <div className="relative h-80 w-full rounded-lg overflow-hidden mb-6">
-              <Image src="/placeholder.svg?height=400&width=800" alt="Featured News" fill className="object-cover" />
+              <Image
+                src="/placeholder.svg?height=400&width=800&text=Foundation+Day+Celebration"
+                alt="Barangay Dela Paz 78th Foundation Day celebration with community gathering"
+                fill
+                className="object-cover"
+              />
             </div>
             <div className="flex gap-4 mb-3">
               <div className="flex items-center gap-1 text-sm text-[#666666]">
@@ -51,7 +56,7 @@ export default function NewsPage() {
                 category: "Health",
                 excerpt:
                   "Schedule for the upcoming COVID-19 vaccination drive at the barangay health center. Residents aged 18 and above are encouraged to get their booster shots.",
-                image: "/placeholder.svg?height=200&width=400",
+                image: "/placeholder.svg?height=200&width=400&text=Vaccination+Drive",
               },
               {
                 title: "Barangay Clean-up Drive",
@@ -59,7 +64,7 @@ export default function NewsPage() {
                 category: "Environment",
                 excerpt:
                   "Join our community clean-up drive this weekend to help keep our streets clean and promote proper waste management among residents.",
-                image: "/placeholder.svg?height=200&width=400",
+                image: "/placeholder.svg?height=200&width=400&text=Community+Cleanup",
               },
               {
                 title: "Youth Leadership Program",
@@ -67,7 +72,7 @@ export default function NewsPage() {
                 category: "Youth",
                 excerpt:
                   "New leadership program for youth aged 15-24. Registration now open for workshops on public speaking, project management, and community organizing.",
-                image: "/placeholder.svg?height=200&width=400",
+                image: "/placeholder.svg?height=200&width=400&text=Youth+Leadership",
               },
               {
                 title: "Senior Citizens' Medical Mission",
@@ -75,7 +80,7 @@ export default function NewsPage() {
                 category: "Health",
                 excerpt:
                   "Free medical check-ups, consultations, and medicines for senior citizens will be provided at the barangay hall on June 30.",
-                image: "/placeholder.svg?height=200&width=400",
+                image: "/placeholder.svg?height=200&width=400&text=Medical+Mission",
               },
               {
                 title: "Livelihood Training for Women",
@@ -83,7 +88,7 @@ export default function NewsPage() {
                 category: "Livelihood",
                 excerpt:
                   "The barangay is offering free livelihood training for women residents, focusing on handicraft making and food processing.",
-                image: "/placeholder.svg?height=200&width=400",
+                image: "/placeholder.svg?height=200&width=400&text=Skills+Training",
               },
             ].map((news, index) => (
               <div key={index} className="flex flex-col md:flex-row gap-6 pb-6 border-b border-[#C4C4C4]">

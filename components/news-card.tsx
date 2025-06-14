@@ -14,7 +14,12 @@ export default function NewsCard({ title, date, category, excerpt, imageUrl }: N
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
       <div className="relative h-48 w-full">
-        <Image src={imageUrl || "/placeholder.svg"} alt={title} fill className="object-cover" />
+        <Image
+          src={imageUrl || "/placeholder.svg?height=200&width=300&text=News+Article"}
+          alt={title}
+          fill
+          className="object-cover"
+        />
       </div>
       <div className="p-6">
         <div className="flex gap-4 mb-3">

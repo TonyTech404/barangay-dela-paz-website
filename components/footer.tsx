@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Mail, Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
@@ -8,14 +9,17 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-[#0E58D8] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">DP</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="relative w-10 h-10 flex-shrink-0">
+                <Image src="/barangay-logo.png" alt="Barangay Dela Paz Official Logo" fill className="object-contain" />
               </div>
-              <h3 className="text-lg font-bold font-poppins">Barangay Dela Paz</h3>
+              <div>
+                <h3 className="text-lg font-bold font-poppins">Barangay Dela Paz</h3>
+                <p className="text-sm text-gray-300">Lungsod ng Biñan, Lalawigan ng Laguna</p>
+              </div>
             </div>
             <p className="text-gray-300 mb-4">
-              Kapayapaan, Kaunlaran, at Pagkakaisa - Building a stronger community together.
+              Lungsod ng Biñan, Lalawigan ng Laguna - Building a stronger community together.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-300 hover:text-[#0E58D8] transition-colors">
@@ -84,7 +88,9 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="text-[#0E58D8] mt-1 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">123 Dela Paz Street, Barangay Dela Paz, City</span>
+                <span className="text-gray-300 text-sm">
+                  123 Dela Paz Street, Barangay Dela Paz, Biñan City, Laguna
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-[#0E58D8]" />
@@ -99,7 +105,9 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center">
-          <p className="text-gray-300 text-sm">© 2023 Barangay Dela Paz. All rights reserved. | Official Website</p>
+          <p className="text-gray-300 text-sm">
+            © 2023 Barangay Dela Paz, Lungsod ng Biñan, Lalawigan ng Laguna. All rights reserved. | Official Website
+          </p>
         </div>
       </div>
     </footer>

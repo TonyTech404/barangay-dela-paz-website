@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
 
@@ -24,12 +25,19 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-[#0E58D8] rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">DP</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="relative w-12 h-12 flex-shrink-0">
+              <Image
+                src="/barangay-logo.png"
+                alt="Barangay Dela Paz Official Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-[#333333] font-poppins">Barangay Dela Paz</h1>
+              <p className="text-xs text-[#666666] hidden sm:block">Lungsod ng Biñan, Lalawigan ng Laguna</p>
             </div>
           </Link>
 

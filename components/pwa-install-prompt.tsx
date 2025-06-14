@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { X, Wifi, WifiOff, Smartphone, Download } from "lucide-react"
+import Image from "next/image"
+import { X, Wifi, WifiOff, Download } from "lucide-react"
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[]
@@ -95,8 +96,8 @@ export default function PWAInstallPrompt() {
               <X size={20} />
             </button>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <Smartphone size={24} />
+              <div className="relative w-12 h-12 bg-white/20 rounded-full flex items-center justify-center p-2">
+                <Image src="/barangay-logo.png" alt="Barangay Dela Paz Logo" fill className="object-contain p-1" />
               </div>
               <div>
                 <h3 className="text-lg font-bold font-poppins">Install Barangay Dela Paz</h3>

@@ -57,8 +57,8 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative h-[500px] md:h-[600px] w-full">
           <Image
-            src="/placeholder.svg?height=600&width=1200"
-            alt="Barangay Dela Paz community center and local landmarks"
+            src="/delapazbg.jpg"
+            alt="Historic waterfront promenade of Barangay Dela Paz with vintage street lamps and heritage cannon"
             fill
             className="object-cover brightness-[0.65]"
             priority

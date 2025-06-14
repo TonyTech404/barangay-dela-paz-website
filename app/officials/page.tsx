@@ -74,37 +74,37 @@ export default function OfficialsPage() {
               {
                 name: "Pedro Reyes",
                 position: "Kagawad - Peace and Order",
-                image: "https://picsum.photos/300/300?random=40",
+                image: "/placeholder.svg?height=300&width=300&text=Pedro+Reyes",
               },
               {
                 name: "Elena Magtanggol",
                 position: "Kagawad - Health and Sanitation",
-                image: "https://picsum.photos/300/300?random=41",
+                image: "/placeholder.svg?height=300&width=300&text=Elena+Magtanggol",
               },
               {
                 name: "Roberto Manalastas",
                 position: "Kagawad - Infrastructure",
-                image: "https://picsum.photos/300/300?random=42",
+                image: "/placeholder.svg?height=300&width=300&text=Roberto+Manalastas",
               },
               {
                 name: "Juana Bautista",
                 position: "Kagawad - Education",
-                image: "https://picsum.photos/300/300?random=43",
+                image: "/placeholder.svg?height=300&width=300&text=Juana+Bautista",
               },
               {
                 name: "Miguel Villanueva",
                 position: "Kagawad - Environment",
-                image: "https://picsum.photos/300/300?random=44",
+                image: "/placeholder.svg?height=300&width=300&text=Miguel+Villanueva",
               },
               {
                 name: "Rosario Domingo",
                 position: "Kagawad - Senior Citizens",
-                image: "https://picsum.photos/300/300?random=45",
+                image: "/placeholder.svg?height=300&width=300&text=Rosario+Domingo",
               },
               {
                 name: "Antonio Pascual",
                 position: "Kagawad - Budget and Finance",
-                image: "https://picsum.photos/300/300?random=46",
+                image: "/placeholder.svg?height=300&width=300&text=Antonio+Pascual",
               },
             ].map((official, index) => (
               <article key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -138,7 +138,7 @@ export default function OfficialsPage() {
             <div className="w-full md:w-1/3 lg:w-1/4">
               <div className="relative h-80 w-full rounded-lg overflow-hidden">
                 <Image
-                  src="https://picsum.photos/300/400?random=50"
+                  src="/placeholder.svg?height=400&width=300&text=Maria+Santos"
                   alt="Maria Santos, SK Chairman of Barangay Dela Paz"
                   fill
                   className="object-cover"
@@ -185,37 +185,37 @@ export default function OfficialsPage() {
               {
                 name: "John Michael Cruz",
                 position: "SK Kagawad - Sports and Recreation",
-                image: "https://picsum.photos/300/300?random=60",
+                image: "/placeholder.svg?height=300&width=300&text=John+Michael+Cruz",
               },
               {
                 name: "Angela Marie Reyes",
                 position: "SK Kagawad - Education and Training",
-                image: "https://picsum.photos/300/300?random=61",
+                image: "/placeholder.svg?height=300&width=300&text=Angela+Marie+Reyes",
               },
               {
                 name: "Carlos Emmanuel Santos",
                 position: "SK Kagawad - Health and Environment",
-                image: "https://picsum.photos/300/300?random=62",
+                image: "/placeholder.svg?height=300&width=300&text=Carlos+Emmanuel+Santos",
               },
               {
                 name: "Patricia Joy Mendoza",
                 position: "SK Kagawad - Arts and Culture",
-                image: "https://picsum.photos/300/300?random=63",
+                image: "/placeholder.svg?height=300&width=300&text=Patricia+Joy+Mendoza",
               },
               {
                 name: "Mark Anthony Garcia",
                 position: "SK Kagawad - Livelihood and Employment",
-                image: "https://picsum.photos/300/300?random=64",
+                image: "/placeholder.svg?height=300&width=300&text=Mark+Anthony+Garcia",
               },
               {
                 name: "Sophia Mae Torres",
                 position: "SK Kagawad - Community Development",
-                image: "https://picsum.photos/300/300?random=65",
+                image: "/placeholder.svg?height=300&width=300&text=Sophia+Mae+Torres",
               },
               {
                 name: "Joshua David Flores",
                 position: "SK Kagawad - Information and Communications",
-                image: "https://picsum.photos/300/300?random=66",
+                image: "/placeholder.svg?height=300&width=300&text=Joshua+David+Flores",
               },
             ].map((official, index) => (
               <article key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -250,17 +250,17 @@ export default function OfficialsPage() {
               {
                 name: "Lourdes Aquino",
                 position: "Barangay Secretary",
-                image: "https://picsum.photos/300/300?random=70",
+                image: "/placeholder.svg?height=300&width=300&text=Lourdes+Aquino",
               },
               {
                 name: "Ricardo Torres",
                 position: "Barangay Treasurer",
-                image: "https://picsum.photos/300/300?random=71",
+                image: "/placeholder.svg?height=300&width=300&text=Ricardo+Torres",
               },
               {
                 name: "Maricel Gonzales",
                 position: "Barangay Clerk",
-                image: "https://picsum.photos/300/300?random=72",
+                image: "/placeholder.svg?height=300&width=300&text=Maricel+Gonzales",
               },
             ].map((staff, index) => (
               <article

@@ -17,7 +17,7 @@ export default function NewsCard({ title, date, category, excerpt, imageUrl }: N
     <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
       <div className="relative h-48 w-full">
         <Image
-          src={imageUrl || "https://picsum.photos/300/200?random=80"}
+          src={imageUrl || "/placeholder.svg?height=200&width=300"}
           alt={title}
           fill
           className="object-cover"

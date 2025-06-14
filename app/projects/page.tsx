@@ -31,7 +31,7 @@ export default function ProjectsPage() {
               expectedCompletion: "August 2023",
               budget: "₱2,500,000",
               progress: 65,
-              image: "https://picsum.photos/500/300?random=10",
+              image: "/placeholder.svg?height=300&width=500&text=Road+Improvement",
             },
             {
               title: "Community Health Center Expansion",
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
               expectedCompletion: "October 2023",
               budget: "₱1,800,000",
               progress: 40,
-              image: "https://picsum.photos/500/300?random=11",
+              image: "/placeholder.svg?height=300&width=500&text=Health+Center",
             },
             {
               title: "Public Park Renovation",
@@ -51,7 +51,7 @@ export default function ProjectsPage() {
               expectedCompletion: "September 2023",
               budget: "₱1,200,000",
               progress: 25,
-              image: "https://picsum.photos/500/300?random=12",
+              image: "/placeholder.svg?height=300&width=500&text=Park+Renovation",
             },
           ].map((project, index) => (
             <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -114,14 +114,14 @@ export default function ProjectsPage() {
                 "Installation of LED street lights along major roads to improve visibility and safety at night.",
               completionDate: "March 2023",
               budget: "₱800,000",
-              image: "https://picsum.photos/300/200?random=20",
+              image: "/placeholder.svg?height=200&width=300&text=Street+Lighting",
             },
             {
               title: "Drainage System Improvement",
               description: "Cleaning and rehabilitation of drainage systems to prevent flooding during rainy season.",
               completionDate: "February 2023",
               budget: "₱1,200,000",
-              image: "https://picsum.photos/300/200?random=21",
+              image: "/placeholder.svg?height=200&width=300&text=Drainage+System",
             },
             {
               title: "Barangay Hall Renovation",
@@ -129,7 +129,7 @@ export default function ProjectsPage() {
                 "Renovation of the barangay hall to improve service delivery and create a more comfortable environment for residents.",
               completionDate: "December 2022",
               budget: "₱1,500,000",
-              image: "https://picsum.photos/300/200?random=22",
+              image: "/placeholder.svg?height=200&width=300&text=Hall+Renovation",
             },
             {
               title: "Community Library",
@@ -137,7 +137,7 @@ export default function ProjectsPage() {
                 "Establishment of a small community library with books, computers, and internet access for students and residents.",
               completionDate: "November 2022",
               budget: "₱600,000",
-              image: "https://picsum.photos/300/200?random=23",
+              image: "/placeholder.svg?height=200&width=300&text=Community+Library",
             },
             {
               title: "Basketball Court Renovation",
@@ -145,7 +145,7 @@ export default function ProjectsPage() {
                 "Renovation of the community basketball court with new flooring, backboards, and seating for spectators.",
               completionDate: "October 2022",
               budget: "₱700,000",
-              image: "https://picsum.photos/300/200?random=24",
+              image: "/placeholder.svg?height=200&width=300&text=Basketball+Court",
             },
             {
               title: "Tree Planting Program",
@@ -153,7 +153,7 @@ export default function ProjectsPage() {
                 "Planting of 500 trees around the barangay to improve air quality and provide shade in public areas.",
               completionDate: "September 2022",
               budget: "₱300,000",
-              image: "https://picsum.photos/300/200?random=25",
+              image: "/placeholder.svg?height=200&width=300&text=Tree+Planting",
             },
           ].map((project, index) => (
             <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -246,14 +246,14 @@ export default function ProjectsPage() {
                 program: "Skills Training for Women (2022)",
                 story:
                   "After completing the handicraft training program, Maria started her own small business selling handmade bags and accessories. She now employs three other women from the barangay and sells her products online and in local markets.",
-                image: "https://picsum.photos/100/100?random=30",
+                image: "/placeholder.svg?height=100&width=100&text=Maria+Santos",
               },
               {
                 name: "Juan Reyes",
                 program: "Youth Entrepreneurship Program (2022)",
                 story:
                   "Juan used the knowledge and mentoring he received from the program to start a small food delivery service in the barangay. His business has grown and now serves neighboring barangays as well, providing employment to five young residents.",
-                image: "https://picsum.photos/100/100?random=31",
+                image: "/placeholder.svg?height=100&width=100&text=Juan+Reyes",
               },
             ].map((story, index) => (
               <div key={index} className="flex gap-4 pb-4 border-b border-[#C4C4C4] last:border-0 last:pb-0">

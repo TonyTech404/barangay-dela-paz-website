@@ -126,37 +126,37 @@ export default function OfficialsPage() {
               {
                 name: "Pedro Reyes",
                 position: "Kagawad - Peace and Order",
-                image: "/placeholder.svg?height=300&width=300&text=Pedro+Reyes",
+                image: "https://picsum.photos/300/300?random=40",
               },
               {
                 name: "Elena Magtanggol",
                 position: "Kagawad - Health and Sanitation",
-                image: "/placeholder.svg?height=300&width=300&text=Elena+M",
+                image: "https://picsum.photos/300/300?random=41",
               },
               {
                 name: "Roberto Manalastas",
                 position: "Kagawad - Infrastructure",
-                image: "/placeholder.svg?height=300&width=300&text=Roberto+M",
+                image: "https://picsum.photos/300/300?random=42",
               },
               {
                 name: "Juana Bautista",
                 position: "Kagawad - Education",
-                image: "/placeholder.svg?height=300&width=300&text=Juana+B",
+                image: "https://picsum.photos/300/300?random=43",
               },
               {
                 name: "Miguel Villanueva",
                 position: "Kagawad - Environment",
-                image: "/placeholder.svg?height=300&width=300&text=Miguel+V",
+                image: "https://picsum.photos/300/300?random=44",
               },
               {
                 name: "Rosario Domingo",
                 position: "Kagawad - Senior Citizens",
-                image: "/placeholder.svg?height=300&width=300&text=Rosario+D",
+                image: "https://picsum.photos/300/300?random=45",
               },
               {
                 name: "Antonio Pascual",
                 position: "Kagawad - Budget and Finance",
-                image: "/placeholder.svg?height=300&width=300&text=Antonio+P",
+                image: "https://picsum.photos/300/300?random=46",
               },
             ].map((official, index) => (
               <article key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -166,6 +166,10 @@ export default function OfficialsPage() {
                     alt={`${official.name}, ${official.position} of Barangay Dela Paz`}
                     fill
                     className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = `/placeholder.svg?height=300&width=300&text=${encodeURIComponent(official.name)}`
+                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -186,10 +190,14 @@ export default function OfficialsPage() {
             <div className="w-full md:w-1/3 lg:w-1/4">
               <div className="relative h-80 w-full rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=300&text=Maria+Santos"
+                  src="https://picsum.photos/300/400?random=50"
                   alt="Maria Santos, SK Chairman of Barangay Dela Paz"
                   fill
                   className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = `/placeholder.svg?height=400&width=300&text=Maria+Santos`
+                  }}
                 />
               </div>
             </div>
@@ -229,37 +237,37 @@ export default function OfficialsPage() {
               {
                 name: "John Michael Cruz",
                 position: "SK Kagawad - Sports and Recreation",
-                image: "/placeholder.svg?height=300&width=300&text=John+Cruz",
+                image: "https://picsum.photos/300/300?random=60",
               },
               {
                 name: "Angela Marie Reyes",
                 position: "SK Kagawad - Education and Training",
-                image: "/placeholder.svg?height=300&width=300&text=Angela+R",
+                image: "https://picsum.photos/300/300?random=61",
               },
               {
                 name: "Carlos Emmanuel Santos",
                 position: "SK Kagawad - Health and Environment",
-                image: "/placeholder.svg?height=300&width=300&text=Carlos+S",
+                image: "https://picsum.photos/300/300?random=62",
               },
               {
                 name: "Patricia Joy Mendoza",
                 position: "SK Kagawad - Arts and Culture",
-                image: "/placeholder.svg?height=300&width=300&text=Patricia+M",
+                image: "https://picsum.photos/300/300?random=63",
               },
               {
                 name: "Mark Anthony Garcia",
                 position: "SK Kagawad - Livelihood and Employment",
-                image: "/placeholder.svg?height=300&width=300&text=Mark+G",
+                image: "https://picsum.photos/300/300?random=64",
               },
               {
                 name: "Sophia Mae Torres",
                 position: "SK Kagawad - Community Development",
-                image: "/placeholder.svg?height=300&width=300&text=Sophia+T",
+                image: "https://picsum.photos/300/300?random=65",
               },
               {
                 name: "Joshua David Flores",
                 position: "SK Kagawad - Information and Communications",
-                image: "/placeholder.svg?height=300&width=300&text=Joshua+F",
+                image: "https://picsum.photos/300/300?random=66",
               },
             ].map((official, index) => (
               <article key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
@@ -269,6 +277,10 @@ export default function OfficialsPage() {
                     alt={`${official.name}, ${official.position} of Barangay Dela Paz`}
                     fill
                     className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = `/placeholder.svg?height=300&width=300&text=${encodeURIComponent(official.name)}`
+                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -290,17 +302,17 @@ export default function OfficialsPage() {
               {
                 name: "Lourdes Aquino",
                 position: "Barangay Secretary",
-                image: "/placeholder.svg?height=300&width=300&text=Lourdes+A",
+                image: "https://picsum.photos/300/300?random=70",
               },
               {
                 name: "Ricardo Torres",
                 position: "Barangay Treasurer",
-                image: "/placeholder.svg?height=300&width=300&text=Ricardo+T",
+                image: "https://picsum.photos/300/300?random=71",
               },
               {
                 name: "Maricel Gonzales",
                 position: "Barangay Clerk",
-                image: "/placeholder.svg?height=300&width=300&text=Maricel+G",
+                image: "https://picsum.photos/300/300?random=72",
               },
             ].map((staff, index) => (
               <article
@@ -313,6 +325,10 @@ export default function OfficialsPage() {
                     alt={`${staff.name}, ${staff.position} of Barangay Dela Paz`}
                     fill
                     className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = `/placeholder.svg?height=300&width=300&text=${encodeURIComponent(staff.name)}`
+                    }}
                   />
                 </div>
                 <div>

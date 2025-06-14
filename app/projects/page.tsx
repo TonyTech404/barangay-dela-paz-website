@@ -29,7 +29,7 @@ export default function ProjectsPage() {
               expectedCompletion: "August 2023",
               budget: "₱2,500,000",
               progress: 65,
-              image: "/placeholder.svg?height=300&width=500&text=Road+Construction",
+              image: "https://picsum.photos/500/300?random=10",
             },
             {
               title: "Community Health Center Expansion",
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
               expectedCompletion: "October 2023",
               budget: "₱1,800,000",
               progress: 40,
-              image: "/placeholder.svg?height=300&width=500&text=Health+Center",
+              image: "https://picsum.photos/500/300?random=11",
             },
             {
               title: "Public Park Renovation",
@@ -49,12 +49,21 @@ export default function ProjectsPage() {
               expectedCompletion: "September 2023",
               budget: "₱1,200,000",
               progress: 25,
-              image: "/placeholder.svg?height=300&width=500&text=Park+Renovation",
+              image: "https://picsum.photos/500/300?random=12",
             },
           ].map((project, index) => (
             <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
               <div className="relative h-64 w-full">
-                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+                <Image
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = `/placeholder.svg?height=300&width=500&text=${encodeURIComponent(project.title)}`
+                  }}
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-[#333333] font-poppins">{project.title}</h3>
@@ -103,14 +112,14 @@ export default function ProjectsPage() {
                 "Installation of LED street lights along major roads to improve visibility and safety at night.",
               completionDate: "March 2023",
               budget: "₱800,000",
-              image: "/placeholder.svg?height=200&width=300&text=LED+Street+Lights",
+              image: "https://picsum.photos/300/200?random=20",
             },
             {
               title: "Drainage System Improvement",
               description: "Cleaning and rehabilitation of drainage systems to prevent flooding during rainy season.",
               completionDate: "February 2023",
               budget: "₱1,200,000",
-              image: "/placeholder.svg?height=200&width=300&text=Drainage+System",
+              image: "https://picsum.photos/300/200?random=21",
             },
             {
               title: "Barangay Hall Renovation",
@@ -118,7 +127,7 @@ export default function ProjectsPage() {
                 "Renovation of the barangay hall to improve service delivery and create a more comfortable environment for residents.",
               completionDate: "December 2022",
               budget: "₱1,500,000",
-              image: "/placeholder.svg?height=200&width=300&text=Barangay+Hall",
+              image: "https://picsum.photos/300/200?random=22",
             },
             {
               title: "Community Library",
@@ -126,7 +135,7 @@ export default function ProjectsPage() {
                 "Establishment of a small community library with books, computers, and internet access for students and residents.",
               completionDate: "November 2022",
               budget: "₱600,000",
-              image: "/placeholder.svg?height=200&width=300&text=Community+Library",
+              image: "https://picsum.photos/300/200?random=23",
             },
             {
               title: "Basketball Court Renovation",
@@ -134,7 +143,7 @@ export default function ProjectsPage() {
                 "Renovation of the community basketball court with new flooring, backboards, and seating for spectators.",
               completionDate: "October 2022",
               budget: "₱700,000",
-              image: "/placeholder.svg?height=200&width=300&text=Basketball+Court",
+              image: "https://picsum.photos/300/200?random=24",
             },
             {
               title: "Tree Planting Program",
@@ -142,12 +151,21 @@ export default function ProjectsPage() {
                 "Planting of 500 trees around the barangay to improve air quality and provide shade in public areas.",
               completionDate: "September 2022",
               budget: "₱300,000",
-              image: "/placeholder.svg?height=200&width=300&text=Tree+Planting",
+              image: "https://picsum.photos/300/200?random=25",
             },
           ].map((project, index) => (
             <div key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
               <div className="relative h-48 w-full">
-                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+                <Image
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = `/placeholder.svg?height=200&width=300&text=${encodeURIComponent(project.title)}`
+                  }}
+                />
                 <div className="absolute top-0 right-0 bg-[#0E58D8] text-white px-3 py-1 text-sm font-medium">
                   Completed
                 </div>
@@ -226,19 +244,28 @@ export default function ProjectsPage() {
                 program: "Skills Training for Women (2022)",
                 story:
                   "After completing the handicraft training program, Maria started her own small business selling handmade bags and accessories. She now employs three other women from the barangay and sells her products online and in local markets.",
-                image: "/placeholder.svg?height=100&width=100&text=Maria+S",
+                image: "https://picsum.photos/100/100?random=30",
               },
               {
                 name: "Juan Reyes",
                 program: "Youth Entrepreneurship Program (2022)",
                 story:
                   "Juan used the knowledge and mentoring he received from the program to start a small food delivery service in the barangay. His business has grown and now serves neighboring barangays as well, providing employment to five young residents.",
-                image: "/placeholder.svg?height=100&width=100&text=Juan+R",
+                image: "https://picsum.photos/100/100?random=31",
               },
             ].map((story, index) => (
               <div key={index} className="flex gap-4 pb-4 border-b border-[#C4C4C4] last:border-0 last:pb-0">
                 <div className="relative h-16 w-16 rounded-full overflow-hidden flex-shrink-0">
-                  <Image src={story.image || "/placeholder.svg"} alt={story.name} fill className="object-cover" />
+                  <Image
+                    src={story.image || "/placeholder.svg"}
+                    alt={story.name}
+                    fill
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = `/placeholder.svg?height=100&width=100&text=${encodeURIComponent(story.name)}`
+                    }}
+                  />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-1 text-[#333333]">{story.name}</h4>

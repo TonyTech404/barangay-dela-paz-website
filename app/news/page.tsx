@@ -18,7 +18,7 @@ export default function NewsPage() {
           <div className="mb-12">
             <div className="relative h-80 w-full rounded-lg overflow-hidden mb-6">
               <Image
-                src="/placeholder.svg?height=400&width=800&text=Foundation+Day+Celebration"
+                src="https://picsum.photos/800/400?random=1"
                 alt="Barangay Dela Paz 78th Foundation Day celebration with community gathering"
                 fill
                 className="object-cover"
@@ -56,7 +56,7 @@ export default function NewsPage() {
                 category: "Health",
                 excerpt:
                   "Schedule for the upcoming COVID-19 vaccination drive at the barangay health center. Residents aged 18 and above are encouraged to get their booster shots.",
-                image: "/placeholder.svg?height=200&width=400&text=Vaccination+Drive",
+                image: "https://picsum.photos/400/200?random=2",
               },
               {
                 title: "Barangay Clean-up Drive",
@@ -64,7 +64,7 @@ export default function NewsPage() {
                 category: "Environment",
                 excerpt:
                   "Join our community clean-up drive this weekend to help keep our streets clean and promote proper waste management among residents.",
-                image: "/placeholder.svg?height=200&width=400&text=Community+Cleanup",
+                image: "https://picsum.photos/400/200?random=3",
               },
               {
                 title: "Youth Leadership Program",
@@ -72,7 +72,7 @@ export default function NewsPage() {
                 category: "Youth",
                 excerpt:
                   "New leadership program for youth aged 15-24. Registration now open for workshops on public speaking, project management, and community organizing.",
-                image: "/placeholder.svg?height=200&width=400&text=Youth+Leadership",
+                image: "https://picsum.photos/400/200?random=4",
               },
               {
                 title: "Senior Citizens' Medical Mission",
@@ -80,7 +80,7 @@ export default function NewsPage() {
                 category: "Health",
                 excerpt:
                   "Free medical check-ups, consultations, and medicines for senior citizens will be provided at the barangay hall on June 30.",
-                image: "/placeholder.svg?height=200&width=400&text=Medical+Mission",
+                image: "https://picsum.photos/400/200?random=5",
               },
               {
                 title: "Livelihood Training for Women",
@@ -88,13 +88,22 @@ export default function NewsPage() {
                 category: "Livelihood",
                 excerpt:
                   "The barangay is offering free livelihood training for women residents, focusing on handicraft making and food processing.",
-                image: "/placeholder.svg?height=200&width=400&text=Skills+Training",
+                image: "https://picsum.photos/400/200?random=6",
               },
             ].map((news, index) => (
               <div key={index} className="flex flex-col md:flex-row gap-6 pb-6 border-b border-[#C4C4C4]">
                 <div className="w-full md:w-1/3">
                   <div className="relative h-48 w-full rounded-lg overflow-hidden">
-                    <Image src={news.image || "/placeholder.svg"} alt={news.title} fill className="object-cover" />
+                    <Image
+                      src={news.image || "/placeholder.svg"}
+                      alt={news.title}
+                      fill
+                      className="object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(news.title)}`
+                      }}
+                    />
                   </div>
                 </div>
                 <div className="w-full md:w-2/3">

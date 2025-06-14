@@ -53,7 +53,7 @@ This is the official website for **Barangay Dela Paz** - a vibrant community gui
 - **Icons**: Lucide React
 - **Fonts**: Google Fonts (Poppins, Open Sans)
 - **PWA**: Next.js PWA capabilities
-- **Deployment**: Vercel
+- **Deployment**: GitHub Pages
 
 ## 🚀 Getting Started
 
@@ -164,36 +164,88 @@ The website uses a consistent color scheme defined in `tailwind.config.ts`:
 
 ## 🌐 Deployment
 
-### GitHub Pages (Free Hosting)
+### GitHub Pages (Manual Deployment - Free)
 
-1. **Enable GitHub Pages in your repository:**
-   - Go to your repository on GitHub
-   - Click on **Settings** tab
-   - Scroll down to **Pages** section
-   - Under **Source**, select **GitHub Actions**
+Since GitHub Actions requires billing, here's how to deploy manually:
 
-2. **Push your code to trigger deployment:**
+#### **Method 1: Using gh-pages package (Recommended)**
+
+1. **Install gh-pages package:**
    \`\`\`bash
-   git add .
-   git commit -m "Configure for GitHub Pages deployment"
-   git push origin main
+   npm install --save-dev gh-pages
    \`\`\`
 
-3. **Access your deployed site:**
+2. **Add deployment script to package.json:**
+   \`\`\`json
+   {
+     "scripts": {
+       "deploy": "npm run build && gh-pages -d out"
+     }
+   }
+   \`\`\`
+
+3. **Deploy your site:**
+   \`\`\`bash
+   npm run deploy
+   \`\`\`
+
+4. **Enable GitHub Pages:**
+   - Go to your repository → **Settings** → **Pages**
+   - Under **Source**, select **Deploy from a branch**
+   - Select **gh-pages** branch
+   - Click **Save**
+
+5. **Access your site:**
    - Your site will be available at: `https://yourusername.github.io/barangay-dela-paz-website/`
-   - Check the **Actions** tab to monitor deployment progress
 
-### Vercel (Recommended for Production)
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically with each push
+#### **Method 2: Manual Upload**
 
-### Other Platforms
-The website can be deployed to any platform that supports Next.js:
-- Netlify
-- AWS Amplify
-- Railway
-- DigitalOcean App Platform
+1. **Build your site locally:**
+   \`\`\`bash
+   npm run build
+   \`\`\`
+
+2. **Create a new branch called gh-pages:**
+   \`\`\`bash
+   git checkout --orphan gh-pages
+   git rm -rf .
+   cp -r out/* .
+   git add .
+   git commit -m "Deploy website"
+   git push origin gh-pages
+   \`\`\`
+
+3. **Enable GitHub Pages:**
+   - Go to your repository → **Settings** → **Pages**
+   - Under **Source**, select **Deploy from a branch**
+   - Select **gh-pages** branch
+   - Click **Save**
+
+### Alternative Free Hosting Options
+
+#### **Netlify (Recommended Alternative)**
+1. **Connect your GitHub repository to Netlify**
+2. **Build settings:**
+   - Build command: `npm run build`
+   - Publish directory: `out`
+3. **Deploy automatically on every push**
+
+#### **Vercel (Also Free)**
+1. **Connect your GitHub repository to Vercel**
+2. **Automatic deployment** with zero configuration
+3. **Custom domain support**
+
+#### **Surge.sh (Simple Static Hosting)**
+1. **Install Surge:**
+   \`\`\`bash
+   npm install -g surge
+   \`\`\`
+2. **Deploy:**
+   \`\`\`bash
+   npm run build
+   cd out
+   surge
+   \`\`\`
 
 ## 📱 PWA Features
 
@@ -242,7 +294,7 @@ For technical support or questions about the website:
 
 - **Barangay Dela Paz Community** - For their support and feedback
 - **Next.js Team** - For the amazing framework
-- **Vercel** - For hosting and deployment platform
+- **Netlify/Vercel** - For free hosting platforms
 - **shadcn/ui** - For the beautiful UI components
 - **Tailwind CSS** - For the utility-first CSS framework
 

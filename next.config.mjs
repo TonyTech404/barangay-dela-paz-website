@@ -11,8 +11,6 @@ const nextConfig = {
   },
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/barangay-dela-paz-website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/barangay-dela-paz-website/' : '',
   distDir: 'out',
 }
 

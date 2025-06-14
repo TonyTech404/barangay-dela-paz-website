@@ -164,7 +164,26 @@ The website uses a consistent color scheme defined in `tailwind.config.ts`:
 
 ## 🌐 Deployment
 
-### Vercel (Recommended)
+### GitHub Pages (Free Hosting)
+
+1. **Enable GitHub Pages in your repository:**
+   - Go to your repository on GitHub
+   - Click on **Settings** tab
+   - Scroll down to **Pages** section
+   - Under **Source**, select **GitHub Actions**
+
+2. **Push your code to trigger deployment:**
+   \`\`\`bash
+   git add .
+   git commit -m "Configure for GitHub Pages deployment"
+   git push origin main
+   \`\`\`
+
+3. **Access your deployed site:**
+   - Your site will be available at: `https://yourusername.github.io/barangay-dela-paz-website/`
+   - Check the **Actions** tab to monitor deployment progress
+
+### Vercel (Recommended for Production)
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Deploy automatically with each push

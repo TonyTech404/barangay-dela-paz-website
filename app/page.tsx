@@ -118,8 +118,8 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Barangay Dela Paz community gathering and local residents"
+                src="/nuestra.jpg"
+                alt="Nuestra Señora de la Buena Esperanza Church - Historic Spanish colonial church in Barangay Dela Paz"
                 fill
                 className="object-cover"
               />

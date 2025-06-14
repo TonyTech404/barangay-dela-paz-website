@@ -135,44 +135,46 @@ export default function Home() {
               <article className="bg-white p-6 rounded-lg shadow-sm">
                 <div className="h-48 mb-4 relative rounded-md overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=200&width=300"
-                    alt="Local handcrafted products and traditional goods from Barangay Dela Paz"
+                    src="/product.png"
+                    alt="Fresh tilapia and local fish catch from Laguna de Bay - supporting local fishing livelihood in Barangay Dela Paz"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 font-poppins">Local Products</h3>
                 <p className="text-[#333333]">
-                  Our community is known for handcrafted goods and local delicacies that showcase our cultural heritage.
+                  Our community is known for fresh fish from Laguna de Bay and local delicacies that showcase our
+                  cultural heritage and support local fishermen.
                 </p>
               </article>
               <article className="bg-white p-6 rounded-lg shadow-sm">
                 <div className="h-48 mb-4 relative rounded-md overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=200&width=300"
-                    alt="Livelihood training programs and skills development workshops"
+                    src="/livelihood.jpg"
+                    alt="Local fishermen working with nets at sunrise on Laguna de Bay - traditional livelihood in Barangay Dela Paz"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 font-poppins">Livelihood Programs</h3>
                 <p className="text-[#333333]">
-                  We support our residents through various skills training and entrepreneurship programs.
+                  We support our residents through various skills training, fishing cooperatives, and entrepreneurship
+                  programs that build on our lakeside location.
                 </p>
               </article>
               <article className="bg-white p-6 rounded-lg shadow-sm">
                 <div className="h-48 mb-4 relative rounded-md overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=200&width=300"
-                    alt="Annual fiesta celebration with cultural performances and community activities"
+                    src="/festival.jpg"
+                    alt="Putolatik Festival celebration with colorful costumes and cultural performances in Barangay Dela Paz"
                     fill
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 font-poppins">Annual Fiesta</h3>
+                <h3 className="text-xl font-semibold mb-2 font-poppins">Cultural Festivals</h3>
                 <p className="text-[#333333]">
-                  Our colorful fiesta celebration every May brings together residents and visitors for cultural
-                  performances and festivities.
+                  Our vibrant Putolatik Festival and other cultural celebrations bring together residents and visitors
+                  for traditional performances and community festivities.
                 </p>
               </article>
             </div>

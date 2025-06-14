@@ -45,7 +45,7 @@ export default function OfficialsPage() {
             },
             mainEntity: {
               "@type": "Person",
-              name: "Juan Dela Cruz",
+              name: "Gino Hernandez Guico",
               jobTitle: "Barangay Captain",
               email: "captain@delapaz.gov.ph",
               telephone: "(123) 456-7890",
@@ -76,15 +76,15 @@ export default function OfficialsPage() {
             <div className="w-full md:w-1/3 lg:w-1/4">
               <div className="relative h-80 w-full rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=300"
-                  alt="Juan Dela Cruz, Barangay Captain of Barangay Dela Paz"
+                  src="/gino.png"
+                  alt="Gino Hernandez Guico, Barangay Captain of Barangay Dela Paz"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
             <div className="w-full md:w-2/3 lg:w-3/4">
-              <h3 className="text-2xl font-bold mb-1 text-[#333333]">Juan Dela Cruz</h3>
+              <h3 className="text-2xl font-bold mb-1 text-[#333333]">Gino Hernandez Guico</h3>
               <p className="text-lg text-[#0E58D8] font-medium mb-4">Barangay Captain</p>
               <div className="flex flex-wrap gap-4 mb-4">
                 <div className="flex items-center gap-2">
@@ -101,7 +101,7 @@ export default function OfficialsPage() {
                 </div>
               </div>
               <div className="bg-[#E8F0FE] p-6 rounded-lg mb-6">
-                <h4 className="text-lg font-semibold mb-2">Message from the Captain</h4>
+                <h4 className="text-lg font-semibold mb-2">Message from Captain Guico</h4>
                 <p className="text-[#333333] mb-4">
                   Welcome to the official website of Barangay Dela Paz! Our community is built on the values of peace,
                   progress, and unity, as reflected in our motto "Kapayapaan, Kaunlaran, at Pagkakaisa."
@@ -116,52 +116,10 @@ export default function OfficialsPage() {
           </div>
         </section>
 
-        {/* SK Chairman */}
+        {/* Barangay Kagawads */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-8 text-[#333333] font-poppins border-b border-[#C4C4C4] pb-2">
-            SK Chairman
-          </h2>
-          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-            <div className="w-full md:w-1/3 lg:w-1/4">
-              <div className="relative h-80 w-full rounded-lg overflow-hidden">
-                <Image
-                  src="/placeholder.svg?height=400&width=300"
-                  alt="Maria Santos, SK Chairman of Barangay Dela Paz"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="w-full md:w-2/3 lg:w-3/4">
-              <h3 className="text-2xl font-bold mb-1 text-[#333333]">Maria Santos</h3>
-              <p className="text-lg text-[#0E58D8] font-medium mb-4">SK Chairman</p>
-              <div className="flex flex-wrap gap-4 mb-4">
-                <div className="flex items-center gap-2">
-                  <Mail size={18} className="text-[#0E58D8]" aria-hidden="true" />
-                  <a href="mailto:sk@delapaz.gov.ph" className="hover:underline">
-                    sk@delapaz.gov.ph
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone size={18} className="text-[#0E58D8]" aria-hidden="true" />
-                  <a href="tel:+1234567891" className="hover:underline">
-                    (123) 456-7891
-                  </a>
-                </div>
-              </div>
-              <p className="text-[#333333] mb-4">
-                As the Sangguniang Kabataan Chairman, Maria leads youth development programs and represents the youth
-                sector in barangay governance. She organizes sports events, educational workshops, and community service
-                activities for young residents.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Kagawads */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-8 text-[#333333] font-poppins border-b border-[#C4C4C4] pb-2">
-            Kagawads
+            Barangay Kagawads
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -219,7 +177,110 @@ export default function OfficialsPage() {
           </div>
         </section>
 
-        {/* Other Staff */}
+        {/* SK Chairman */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-[#333333] font-poppins border-b border-[#C4C4C4] pb-2">
+            SK Chairman
+          </h2>
+          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+            <div className="w-full md:w-1/3 lg:w-1/4">
+              <div className="relative h-80 w-full rounded-lg overflow-hidden">
+                <Image
+                  src="/placeholder.svg?height=400&width=300"
+                  alt="Maria Santos, SK Chairman of Barangay Dela Paz"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-2/3 lg:w-3/4">
+              <h3 className="text-2xl font-bold mb-1 text-[#333333]">Maria Santos</h3>
+              <p className="text-lg text-[#0E58D8] font-medium mb-4">SK Chairman</p>
+              <div className="flex flex-wrap gap-4 mb-4">
+                <div className="flex items-center gap-2">
+                  <Mail size={18} className="text-[#0E58D8]" aria-hidden="true" />
+                  <a href="mailto:sk@delapaz.gov.ph" className="hover:underline">
+                    sk@delapaz.gov.ph
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={18} className="text-[#0E58D8]" aria-hidden="true" />
+                  <a href="tel:+1234567891" className="hover:underline">
+                    (123) 456-7891
+                  </a>
+                </div>
+              </div>
+              <p className="text-[#333333] mb-4">
+                As the Sangguniang Kabataan Chairman, Maria leads youth development programs and represents the youth
+                sector in barangay governance. She organizes sports events, educational workshops, and community service
+                activities for young residents.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SK Kagawads */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-[#333333] font-poppins border-b border-[#C4C4C4] pb-2">
+            SK Kagawads
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "John Michael Cruz",
+                position: "SK Kagawad - Sports and Recreation",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Angela Marie Reyes",
+                position: "SK Kagawad - Education and Training",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Carlos Emmanuel Santos",
+                position: "SK Kagawad - Health and Environment",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Patricia Joy Mendoza",
+                position: "SK Kagawad - Arts and Culture",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Mark Anthony Garcia",
+                position: "SK Kagawad - Livelihood and Employment",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Sophia Mae Torres",
+                position: "SK Kagawad - Community Development",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+              {
+                name: "Joshua David Flores",
+                position: "SK Kagawad - Information and Communications",
+                image: "/placeholder.svg?height=300&width=300",
+              },
+            ].map((official, index) => (
+              <article key={index} className="bg-white rounded-lg overflow-hidden shadow-sm border border-[#C4C4C4]">
+                <div className="relative h-64 w-full">
+                  <Image
+                    src={official.image || "/placeholder.svg"}
+                    alt={`${official.name}, ${official.position} of Barangay Dela Paz`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-xl font-bold mb-1 text-[#333333]">{official.name}</h3>
+                  <p className="text-[#0E58D8] font-medium">{official.position}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Barangay Staff */}
         <section>
           <h2 className="text-2xl font-bold mb-8 text-[#333333] font-poppins border-b border-[#C4C4C4] pb-2">
             Barangay Staff

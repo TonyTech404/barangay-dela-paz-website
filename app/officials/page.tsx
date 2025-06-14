@@ -1,63 +1,11 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import { Mail, Phone } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Barangay Officials & Staff",
-  description:
-    "Meet the dedicated leaders and staff members who serve Barangay Dela Paz community. Learn about our Barangay Captain, SK Chairman, Kagawads, and administrative staff.",
-  openGraph: {
-    title: "Barangay Officials & Staff | Barangay Dela Paz",
-    description: "Meet the dedicated leaders and staff members who serve Barangay Dela Paz community.",
-    images: ["/placeholder.svg?height=630&width=1200"],
-  },
-}
 
 export default function OfficialsPage() {
   return (
     <>
-      {/* Structured Data for Officials Page */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "Barangay Officials & Staff",
-            description: "Meet the dedicated leaders and staff members who serve Barangay Dela Paz community",
-            url: "https://delapaz.gov.ph/officials",
-            breadcrumb: {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://delapaz.gov.ph",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Officials",
-                  item: "https://delapaz.gov.ph/officials",
-                },
-              ],
-            },
-            mainEntity: {
-              "@type": "Person",
-              name: "Gino Hernandez Guico",
-              jobTitle: "Barangay Captain",
-              email: "captain@delapaz.gov.ph",
-              telephone: "(123) 456-7890",
-              worksFor: {
-                "@type": "GovernmentOrganization",
-                name: "Barangay Dela Paz",
-              },
-            },
-          }),
-        }}
-      />
-
       <div className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4 text-[#333333] font-poppins">Barangay Officials & Staff</h1>

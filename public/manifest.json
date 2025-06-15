@@ -1,53 +1,59 @@
 {
-  "name": "Barangay Dela Paz - Lungsod ng Biñan",
+  "name": "Barangay Dela Paz",
   "short_name": "Dela Paz",
-  "description": "Official website of Barangay Dela Paz, Lungsod ng Biñan, Lalawigan ng Laguna",
+  "description": "Official website of Barangay Dela Paz, Biñan City",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0E58D8",
-  "orientation": "portrait-primary",
-  "categories": ["government", "utilities"],
-  "lang": "en",
-  "dir": "ltr",
   "icons": [
     {
-      "src": "/barangay-logo.png",
-      "sizes": "512x512",
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
       "type": "image/png",
-      "purpose": "maskable any"
+      "purpose": "any maskable"
     },
     {
-      "src": "/barangay-logo.png",
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable any"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Emergency Contacts",
-      "short_name": "Emergency",
-      "description": "Quick access to emergency hotlines",
-      "url": "/emergency",
-      "icons": [
-        {
-          "src": "/barangay-logo.png",
-          "sizes": "96x96"
-        }
-      ]
+      "purpose": "any maskable"
     },
     {
-      "name": "Request Services",
-      "short_name": "Services",
-      "description": "Apply for barangay clearance and other documents",
-      "url": "/services",
-      "icons": [
-        {
-          "src": "/barangay-logo.png",
-          "sizes": "96x96"
-        }
-      ]
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

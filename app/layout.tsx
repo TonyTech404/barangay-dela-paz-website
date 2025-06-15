@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Open_Sans, Poppins } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
@@ -9,7 +9,7 @@ import PWAInstallPrompt from "@/components/pwa-install-prompt"
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 })
 
@@ -18,6 +18,14 @@ const openSans = Open_Sans({
   weight: ["400", "500", "600"],
   variable: "--font-open-sans",
 })
+
+export const viewport: Viewport = {
+  themeColor: "#0E58D8",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +52,7 @@ export const metadata: Metadata = {
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
+    telephone: true,
   },
   metadataBase: new URL("https://delapaz.gov.ph"),
   alternates: {
@@ -89,7 +97,12 @@ export const metadata: Metadata = {
   },
   category: "government",
   manifest: "/manifest.json",
-    generator: 'v0.dev'
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Barangay Dela Paz",
+  },
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -98,7 +111,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${openSans.variable} font-sans min-h-screen flex flex-col`}>
       <head>
         {/* Structured Data */}
         <script
@@ -152,25 +165,29 @@ export default function RootLayout({
         />
 
         {/* Additional Meta Tags */}
-        <meta name="theme-color" content="#0E58D8" />
-        <meta name="msapplication-TileColor" content="#0E58D8" />
+        <meta name="application-name" content="Barangay Dela Paz" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Barangay Dela Paz" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/icons/icon-152x152.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-72x72.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-72x72.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={`${poppins.variable} ${openSans.variable} font-sans min-h-screen flex flex-col`}>
+      <body className="flex min-h-screen flex-col bg-[#F5F5F5]">
         <Header />
         <ScrollToTop />
         <PWAInstallPrompt />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

@@ -20,6 +20,13 @@ export default function Header() {
     { name: "Contact", href: "/contact" },
   ]
 
+  const isActivePath = (path: string) => {
+    if (path === "/") {
+      return pathname === "/"
+    }
+    return pathname.startsWith(path)
+  }
+
   return (
     <header className="bg-white shadow-sm border-b border-[#C4C4C4] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -44,18 +51,18 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = isActivePath(item.href)
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`font-medium transition-colors relative ${
+                  className={`font-medium transition-colors relative py-5 ${
                     isActive ? "text-[#0E58D8] font-semibold" : "text-[#333333] hover:text-[#0E58D8]"
                   }`}
                 >
                   {item.name}
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#0E58D8] rounded-full"></span>
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0E58D8] rounded-full"></span>
                   )}
                 </Link>
               )
@@ -73,15 +80,15 @@ export default function Header() {
           <div className="md:hidden py-4 border-t border-[#C4C4C4]">
             <nav className="flex flex-col space-y-2">
               {navigation.map((item) => {
-                const isActive = pathname === item.href
+                const isActive = isActivePath(item.href)
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`font-medium py-2 transition-colors ${
+                    className={`font-medium py-2 px-3 transition-colors rounded-md ${
                       isActive
-                        ? "text-[#0E58D8] font-semibold bg-[#E8F0FE] px-3 rounded-md"
-                        : "text-[#333333] hover:text-[#0E58D8]"
+                        ? "text-[#0E58D8] font-semibold bg-[#E8F0FE]"
+                        : "text-[#333333] hover:text-[#0E58D8] hover:bg-gray-50"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >

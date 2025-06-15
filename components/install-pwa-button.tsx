@@ -71,7 +71,7 @@ export default function InstallPWAButton() {
   return (
     <button
       onClick={handleInstall}
-      className="flex items-center gap-2 bg-[#0E58D8] hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors font-medium shadow-sm"
+      className="flex items-center gap-2 bg-[#0E58D8] hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors font-medium shadow-sm md:w-auto w-full"
     >
       <Download size={16} />
       <span className="whitespace-nowrap">Install App</span>

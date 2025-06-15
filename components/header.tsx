@@ -77,7 +77,6 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-4">
-            <InstallPWAButton />
             <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -105,6 +104,9 @@ export default function Header() {
                   </Link>
                 )
               })}
+              <div className="pt-2 mt-2 border-t border-[#C4C4C4]">
+                <InstallPWAButton />
+              </div>
             </nav>
           </div>
         )}

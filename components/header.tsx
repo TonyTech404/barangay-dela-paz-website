@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
+import InstallPWAButton from "./install-pwa-button"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,31 +49,39 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => {
-              const isActive = isActivePath(item.href)
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`font-medium transition-colors relative py-5 ${
-                    isActive ? "text-[#0E58D8] font-semibold" : "text-[#333333] hover:text-[#0E58D8]"
-                  }`}
-                >
-                  {item.name}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0E58D8] rounded-full"></span>
-                  )}
-                </Link>
-              )
-            })}
-          </nav>
+          {/* Desktop Navigation and Install Button */}
+          <div className="hidden md:flex items-center">
+            <nav className="flex space-x-6 mr-6">
+              {navigation.map((item) => {
+                const isActive = isActivePath(item.href)
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`font-medium transition-colors relative py-5 ${
+                      isActive ? "text-[#0E58D8] font-semibold" : "text-[#333333] hover:text-[#0E58D8]"
+                    }`}
+                  >
+                    {item.name}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0E58D8] rounded-full"></span>
+                    )}
+                  </Link>
+                )
+              })}
+            </nav>
+            <div className="border-l border-[#C4C4C4] pl-6">
+              <InstallPWAButton />
+            </div>
+          </div>
 
           {/* Mobile menu button */}
-          <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <InstallPWAButton />
+            <button className="p-2" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

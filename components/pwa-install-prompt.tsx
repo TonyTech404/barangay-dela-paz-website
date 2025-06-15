@@ -13,6 +13,8 @@ interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>
 }
 
+const PWA_INSTALL_EVENT = "pwa-install-available"
+
 export default function PWAInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null)
   const [showPrompt, setShowPrompt] = useState(false)
@@ -67,7 +69,11 @@ export default function PWAInstallPrompt() {
     // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault()
-      setDeferredPrompt(e as BeforeInstallPromptEvent)
+      const promptEvent = e as BeforeInstallPromptEvent
+      setDeferredPrompt(promptEvent)
+      
+      // Dispatch custom event for the install button
+      window.dispatchEvent(new CustomEvent(PWA_INSTALL_EVENT, { detail: promptEvent }))
       
       // Show prompt after a longer delay
       setTimeout(() => {

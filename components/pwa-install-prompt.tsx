@@ -25,24 +25,45 @@ export default function PWAInstallPrompt() {
       return
     }
 
-    // Check if user already dismissed the prompt
-    const dismissed = localStorage.getItem("pwa-install-dismissed")
-    const dismissedTime = dismissed ? Number.parseInt(dismissed) : 0
-    const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000
+    // Check if user has made a decision before
+    const userDecision = localStorage.getItem("pwa-install-decision")
+    if (userDecision) {
+      const { decision, timestamp } = JSON.parse(userDecision)
+      const now = Date.now()
 
-    if (dismissedTime > oneDayAgo) {
-      return // Don't show if dismissed within last 24 hours
+      // If user clicked "Don't Ask Again", respect that indefinitely
+      if (decision === "never") {
+        return
+      }
+
+      // If user clicked "Not Now", don't show for 7 days
+      if (decision === "later" && now - timestamp < 7 * 24 * 60 * 60 * 1000) {
+        return
+      }
+    }
+
+    // Check if user has been on the site long enough
+    const visitStartTime = sessionStorage.getItem("visit-start-time")
+    if (!visitStartTime) {
+      sessionStorage.setItem("visit-start-time", Date.now().toString())
+      return // Don't show on first page load
+    }
+
+    // Only show after user has been on site for at least 60 seconds
+    const timeOnSite = Date.now() - parseInt(visitStartTime)
+    if (timeOnSite < 60000) {
+      return
     }
 
     // Listen for the beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault()
       setDeferredPrompt(e as BeforeInstallPromptEvent)
-
-      // Show prompt after user has been on site for a bit
+      
+      // Show prompt after a delay
       setTimeout(() => {
         setShowPrompt(true)
-      }, 3000) // Show after 3 seconds
+      }, 1000)
     }
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
@@ -68,12 +89,24 @@ export default function PWAInstallPrompt() {
 
   const handleDismiss = () => {
     setShowPrompt(false)
-    localStorage.setItem("pwa-install-dismissed", Date.now().toString())
+    localStorage.setItem(
+      "pwa-install-decision",
+      JSON.stringify({
+        decision: "never",
+        timestamp: Date.now()
+      })
+    )
   }
 
   const handleNotNow = () => {
     setShowPrompt(false)
-    // Don't set localStorage, so it can show again later
+    localStorage.setItem(
+      "pwa-install-decision",
+      JSON.stringify({
+        decision: "later",
+        timestamp: Date.now()
+      })
+    )
   }
 
   if (!showPrompt || isInstalled) {

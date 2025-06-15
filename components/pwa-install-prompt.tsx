@@ -42,6 +42,15 @@ export default function PWAInstallPrompt() {
       }
     }
 
+    // Track page views
+    const pageViews = parseInt(localStorage.getItem("page-views") || "0")
+    localStorage.setItem("page-views", (pageViews + 1).toString())
+
+    // Only show after minimum page views
+    if (pageViews < 3) {
+      return // Don't show until user has viewed at least 3 pages
+    }
+
     // Check if user has been on the site long enough
     const visitStartTime = sessionStorage.getItem("visit-start-time")
     if (!visitStartTime) {
@@ -49,9 +58,9 @@ export default function PWAInstallPrompt() {
       return // Don't show on first page load
     }
 
-    // Only show after user has been on site for at least 60 seconds
+    // Only show after user has been on site for at least 2 minutes
     const timeOnSite = Date.now() - parseInt(visitStartTime)
-    if (timeOnSite < 60000) {
+    if (timeOnSite < 120000) { // 2 minutes
       return
     }
 
@@ -60,10 +69,10 @@ export default function PWAInstallPrompt() {
       e.preventDefault()
       setDeferredPrompt(e as BeforeInstallPromptEvent)
       
-      // Show prompt after a delay
+      // Show prompt after a longer delay
       setTimeout(() => {
         setShowPrompt(true)
-      }, 1000)
+      }, 2000) // 2 seconds delay
     }
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
@@ -81,6 +90,8 @@ export default function PWAInstallPrompt() {
 
     if (outcome === "accepted") {
       setIsInstalled(true)
+      // Clear page views counter after successful installation
+      localStorage.removeItem("page-views")
     }
 
     setDeferredPrompt(null)
@@ -96,6 +107,8 @@ export default function PWAInstallPrompt() {
         timestamp: Date.now()
       })
     )
+    // Clear page views counter
+    localStorage.removeItem("page-views")
   }
 
   const handleNotNow = () => {
@@ -107,7 +120,27 @@ export default function PWAInstallPrompt() {
         timestamp: Date.now()
       })
     )
+    // Reset page views counter
+    localStorage.setItem("page-views", "0")
   }
+
+  // Don't show if there's another modal or dialog open
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node instanceof HTMLElement && 
+              (node.getAttribute("role") === "dialog" || 
+               node.getAttribute("role") === "modal")) {
+            setShowPrompt(false)
+          }
+        }
+      }
+    })
+
+    observer.observe(document.body, { childList: true, subtree: true })
+    return () => observer.disconnect()
+  }, [])
 
   if (!showPrompt || isInstalled) {
     return null
